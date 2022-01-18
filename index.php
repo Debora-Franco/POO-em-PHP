@@ -8,21 +8,29 @@
     <body>
         <pre>
         <?php
-        require_once 'Caneta.php';
+        require_once 'ContaBanco.php';
+        $p1=new ContaBanco();//Jubileu
+        $p2=new ContaBanco();//Creuza
         
-        $c1=new Caneta("BIC","Verde", 0.5);
-        $c2=new Caneta("kkk", "Azul",0.8);
+        $p1->abrirConta("CC");
+        $p1->setDono("Jubileu");
+        $p1->setNumConta(1111);
         
-        print_r($c1);
-        print_r($c2);
+        $p2->abrirConta("CP");
+        $p2->setDono("Creuza");
+        $p2->setNumConta(3333);
         
-        //$c1->setModelo("Bic");(Pode usar esse como o exemplo abaixo)
-       // $c1->modelo="Bic";
-      // $c1->setPonta (0.5);
-       // $c1->ponta= 0.6; ( Não pode usar, pois é privado)
-       // print_r($c1);
-       // print "Eu tenho uma caneta $c1->getModelo() de ponta $c!->getPonta()";
-        
+       
+                $p1->depositar(300);
+                $p2->depositar(500);
+                
+                $p1->pagarMensal();
+                $p2->pagarMensal();
+                
+                $p2->sacar(100);
+
+        print_r($p1);
+        print_r($p2);
         ?>
         </pre>
     </body>
