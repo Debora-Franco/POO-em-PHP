@@ -12,7 +12,7 @@ class Livro implements Publicacao {
     private $leitor;
     
     public function detalhes(){
-      echo"<hr>Livro ". $this->titulo. " ecrito por ".$this->autor;
+      echo"<hr>Livro ". $this->titulo. " escrito por ".$this->autor;
       echo"<br> Páginas: ".$this->totPaginas ." atual ".$this->pagAtual;
       echo "<br> Sendo lido por ".$this->leitor->getNome();
       
